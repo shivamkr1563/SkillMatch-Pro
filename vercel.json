@@ -1,0 +1,30 @@
+# Vercel Configuration
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/api/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "frontend/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "src/api/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/$1"
+    }
+  ],
+  "env": {
+    "GEMINI_API_KEY": "@gemini_api_key",
+    "CHROMA_PERSIST_DIR": "./data/chroma_db",
+    "API_HOST": "0.0.0.0",
+    "API_PORT": "8000"
+  }
+}
