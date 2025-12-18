@@ -1,23 +1,15 @@
 {
-  "version": 2,
-  "builds": [
+  "buildCommand": "echo 'Frontend only - API hosted on Render'",
+  "outputDirectory": "frontend",
+  "headers": [
     {
-      "src": "src/api/main.py",
-      "use": "@vercel/python"
-    },
-    {
-      "src": "frontend/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "src/api/main.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "frontend/$1"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ]
 }

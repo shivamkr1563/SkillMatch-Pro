@@ -3,9 +3,10 @@
  */
 
 // API Configuration
+// Update this URL after deploying to Render
 const API_BASE_URL = window.location.hostname === 'localhost' 
     ? 'http://localhost:8000' 
-    : '/api';
+    : 'https://skillmatch-pro-api.onrender.com';
 
 // State
 let currentQuery = '';
