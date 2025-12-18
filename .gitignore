@@ -24,7 +24,7 @@ ENV/
 data/raw/*.json
 data/raw/*.csv
 data/processed/*.pkl
-data/chroma_db/
+# data/chroma_db/  # Included in repo for Vercel deployment
 
 # Jupyter
 .ipynb_checkpoints/
